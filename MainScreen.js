@@ -11,8 +11,11 @@ import React, {
     View,
 } from 'react-native';
 
-import Header from './Header';
+
 import HomePage from './home/HomePage';
+import MyAccountPage from './home/MyAccountPage';
+import Category from './home/CategoryPage';
+import ShopCartPage from './home/ShopCartPage';
 import TabNavigator from 'react-native-tab-navigator';
 
 const HOME = 'home';
@@ -21,9 +24,6 @@ const HOME_FOCUS = require('./images/tabs/home_focus.png');
 const CATEGORY = 'category';
 const CATEGORY_NORMAL = require('./images/tabs/category_normal.png');
 const CATEGORY_FOCUS = require('./images/tabs/category_focus.png');
-const FAXIAN = 'faxian';
-const FAXIAN_NORMAL = require('./images/tabs/faxian_normal.png');
-const FAXIAN_FOCUS = require('./images/tabs/faxian_focus.png');
 const CART = 'cart';
 const CART_NORMAL = require('./images/tabs/cart_normal.png');
 const CART_FOCUS = require('./images/tabs/cart_focus.png');
@@ -61,12 +61,12 @@ export default class MainScreen extends Component {
     render() {
         return (
             <View style={{flex:1}}>
-                    <Header />
+                    
                     <TabNavigator hidesTabTouch={true} tabBarStyle={styles.tab}>
                         {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, <HomePage/>)}
-                        {this._renderTabItem(CATEGORY_NORMAL, CATEGORY_FOCUS, CATEGORY, MainScreen._createChildView(CATEGORY))}
-                        {this._renderTabItem(CART_NORMAL, CART_FOCUS, CART, MainScreen._createChildView(CART))}
-                        {this._renderTabItem(PERSONAL_NORMAL, PERSONAL_FOCUS, PERSONAL, MainScreen._createChildView(PERSONAL))}
+                        {this._renderTabItem(CATEGORY_NORMAL, CATEGORY_FOCUS, CATEGORY, <Category/>)}
+                        {this._renderTabItem(CART_NORMAL, CART_FOCUS, CART,<ShopCartPage/>)}
+                        {this._renderTabItem(PERSONAL_NORMAL, PERSONAL_FOCUS, PERSONAL, <MyAccountPage/>)}
                     </TabNavigator>
 
             </View >

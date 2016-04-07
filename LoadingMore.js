@@ -24,7 +24,14 @@ export default class LoadingMore extends Component {
 
     _onFetch(page = 1, callback, options) {
         setTimeout(() => {
-            var rows = ['row ' + ((page - 1) * 3 + 1), 'row ' + ((page - 1) * 3 + 2), 'row ' + ((page - 1) * 3 + 3)];
+            var rows = [
+                'row ' + ((page - 1) * 6 + 1),
+                'row ' + ((page - 1) * 6 + 2),
+                'row ' + ((page - 1) * 6 + 3),
+                'row ' + ((page - 1) * 6 + 4),
+                'row ' + ((page - 1) * 6 + 5),
+                'row ' + ((page - 1) * 6 + 6),
+            ];
             if (page === 6) {
                 callback(rows, {
                     allLoaded: true,
@@ -47,7 +54,8 @@ export default class LoadingMore extends Component {
                 underlayColor='#fff'
                 activeOpacity={0.5}
                 onPress={() => ToastAndroid.show(rowData,ToastAndroid.SHORT)}>
-                <Text style={{}}>{rowData}</Text>
+                <Text style={{color: '#e25a5b'}}>{rowData}</Text>
+
             </TouchableHighlight>
         );
     }

@@ -12,9 +12,10 @@ import React, {
     RefreshControl,
     ScrollView,
 } from 'react-native';
-import LoadingMore from '../LoadingMore';
+import Header from '../header/HomeHeader';
 import ViewPager from 'react-native-viewpager';
 import MenuButton from './MenuButton';
+import LoadingMore from '../LoadingMore';
 
 const BANNER_IMGS = [
     require('../images/banner/first.jpg'),
@@ -51,8 +52,10 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <View style={{height:517,justifyContent: 'center'}}>
+            <View style={{height:522,justifyContent: 'center'}}>
+                <Header />
                 <ScrollView showsVerticalScrollIndicator={true} contentContainerStyle={{backgroundColor:'#fff'}}>
+
                     <ViewPager
                         style={{height:140}}
                         dataSource={this.state.dataSource}
