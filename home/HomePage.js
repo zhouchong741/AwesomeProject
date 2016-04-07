@@ -8,10 +8,11 @@ import React, {
     Text,
     Image,
     StyleSheet,
-    ScrollView,
     Alert,
-    RefreshControl
+    RefreshControl,
+    ScrollView,
 } from 'react-native';
+import LoadingMore from '../LoadingMore';
 import ViewPager from 'react-native-viewpager';
 import MenuButton from './MenuButton';
 
@@ -50,42 +51,48 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <View>
-                <ViewPager
-                    style={{height:140}}
-                    dataSource={this.state.dataSource}
-                    renderPage={this._renderPage}
-                    isLoop={true}
-                    autoPlay={true}/>
-                <View style={styles.menuView}>
-                    <MenuButton renderIcon={require('../images/home_icons/one.png')}
-                                showText={'优选家居'} tag={'yxjj'}
-                                onClick={this._onMenuClick}/>
-                    <MenuButton renderIcon={require('../images/home_icons/two.png')}
-                                showText={'品味厨房'} tag={'pwcf'}
-                                onClick={this._onMenuClick}/>
-                    <MenuButton renderIcon={require('../images/home_icons/three.png')}
-                                showText={'生活电器'} tag={'shdq'}
-                                onClick={this._onMenuClick}/>
-                    <MenuButton renderIcon={require('../images/home_icons/four.png')}
-                                showText={'极客数码'} tag={'jksm'}
-                                onClick={this._onMenuClick}/>
-                </View>
-                <View style={styles.menuView}>
-                    <MenuButton renderIcon={require('../images/home_icons/five.png')}
-                                showText={'美酒伴侣'} tag={'mjbl'}
-                                onClick={this._onMenuClick}/>
-                    <MenuButton renderIcon={require('../images/home_icons/six.png')}
-                                showText={'轻松办公'} tag={'qsbg'}
-                                onClick={this._onMenuClick}/>
-                    <MenuButton renderIcon={require('../images/home_icons/seven.png')}
-                                showText={'新品专区'} tag={'xpzq'}
-                                onClick={this._onMenuClick}/>
-                    <MenuButton renderIcon={require('../images/home_icons/eight.png')}
-                                showText={'翻牌福利'} tag={'fpfl'}
-                                onClick={this._onMenuClick}/>
-                </View>
-                <View style={{marginTop:15,borderWidth:0.5,borderColor:'#ccc'}}/>
+            <View style={{height:517,justifyContent: 'center'}}>
+                <ScrollView showsVerticalScrollIndicator={true} contentContainerStyle={{backgroundColor:'#fff'}}>
+                    <ViewPager
+                        style={{height:140}}
+                        dataSource={this.state.dataSource}
+                        renderPage={this._renderPage}
+                        isLoop={true}
+                        autoPlay={true}/>
+                    <View style={styles.menuView}>
+                        <MenuButton renderIcon={require('../images/home_icons/one.png')}
+                                    showText={'优选家居'} tag={'yxjj'}
+                                    onClick={this._onMenuClick}/>
+                        <MenuButton renderIcon={require('../images/home_icons/two.png')}
+                                    showText={'品味厨房'} tag={'pwcf'}
+                                    onClick={this._onMenuClick}/>
+                        <MenuButton renderIcon={require('../images/home_icons/three.png')}
+                                    showText={'生活电器'} tag={'shdq'}
+                                    onClick={this._onMenuClick}/>
+                        <MenuButton renderIcon={require('../images/home_icons/four.png')}
+                                    showText={'极客数码'} tag={'jksm'}
+                                    onClick={this._onMenuClick}/>
+                    </View>
+                    <View style={styles.menuView}>
+                        <MenuButton renderIcon={require('../images/home_icons/five.png')}
+                                    showText={'美酒伴侣'} tag={'mjbl'}
+                                    onClick={this._onMenuClick}/>
+                        <MenuButton renderIcon={require('../images/home_icons/six.png')}
+                                    showText={'轻松办公'} tag={'qsbg'}
+                                    onClick={this._onMenuClick}/>
+                        <MenuButton renderIcon={require('../images/home_icons/seven.png')}
+                                    showText={'新品专区'} tag={'xpzq'}
+                                    onClick={this._onMenuClick}/>
+                        <MenuButton renderIcon={require('../images/home_icons/eight.png')}
+                                    showText={'翻牌福利'} tag={'fpfl'}
+                                    onClick={this._onMenuClick}/>
+                    </View>
+                    <View style={{marginTop:15,borderWidth:0.5,borderColor:'#ccc'}}/>
+                    
+                    
+                    <LoadingMore />
+                </ScrollView>
+
             </View>
         )
     }
@@ -101,5 +108,4 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 10
     }
-
 });

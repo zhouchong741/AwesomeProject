@@ -8,7 +8,7 @@ import React, {
     StyleSheet,
     Image,
     Text,
-    View
+    View,
 } from 'react-native';
 
 import Header from './Header';
@@ -60,16 +60,17 @@ export default class MainScreen extends Component {
 
     render() {
         return (
-            <View style={{flex: 1}}>
-                <Header />
-                <TabNavigator hidesTabTouch={true} tabBarStyle={styles.tab}>
-                    {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, <HomePage/>)}
-                    {this._renderTabItem(CATEGORY_NORMAL, CATEGORY_FOCUS, CATEGORY, MainScreen._createChildView(CATEGORY))}
-                    
-                    {this._renderTabItem(CART_NORMAL, CART_FOCUS, CART, MainScreen._createChildView(CART))}
-                    {this._renderTabItem(PERSONAL_NORMAL, PERSONAL_FOCUS, PERSONAL, MainScreen._createChildView(PERSONAL))}
-                </TabNavigator>
+            <View style={{flex:1}}>
+                    <Header />
+                    <TabNavigator hidesTabTouch={true} tabBarStyle={styles.tab}>
+                        {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, <HomePage/>)}
+                        {this._renderTabItem(CATEGORY_NORMAL, CATEGORY_FOCUS, CATEGORY, MainScreen._createChildView(CATEGORY))}
+                        {this._renderTabItem(CART_NORMAL, CART_FOCUS, CART, MainScreen._createChildView(CART))}
+                        {this._renderTabItem(PERSONAL_NORMAL, PERSONAL_FOCUS, PERSONAL, MainScreen._createChildView(PERSONAL))}
+                    </TabNavigator>
+
             </View >
+
         );
     }
 }
@@ -77,7 +78,7 @@ export default class MainScreen extends Component {
 const styles = StyleSheet.create({
     tab: {
         height: 52,
-        backgroundColor: '#303030',
+        backgroundColor: '#fff',
         alignItems: 'center',
     },
     tabIcon: {
@@ -85,5 +86,7 @@ const styles = StyleSheet.create({
         height: 35,
         resizeMode: 'stretch',
         marginTop: 12.5
-    }
+    },
+
+
 });
