@@ -14,37 +14,30 @@ import React, {
     ToastAndroid,
     TouchableHighlight,
 } from 'react-native';
-class MoreCustomButton extends React.Component {
-    render() {
-        return (
-            <TouchableHighlight
-                style={styles.button}
-                underlayColor="#a5a5a5"
-                onPress={this.props.onPress}>
-                <Text style={styles.buttonText}>{this.props.text}</Text>
-            </TouchableHighlight>
-        );
-    }
-}
+
+var ViewPager = require('react-native-viewpager');
 class AwesomeProject extends Component {
     render() {
         return (
-            <MoreCustomButton
-                onPress={() => {
-          ToastAndroid.show('点击了', ToastAndroid.SHORT)}}
-                text="请点击我~"
+            <ViewPager
+                dataSource={this.state.dataSource}
+                renderPage={this._renderPage}
+                animation={(animatedValue, toValue, gestureState) => {
+
+            var velocity = Math.abs(gestureState.vx);
+            var baseDuration = 300;
+            var duration = (velocity > 1) ? 1/velocity * baseDuration : baseDuration;
+
+            return Animated.timing(animatedValue,
+            {
+                toValue: toValue,
+                duration: duration,
+                easing: Easing.out(Easing.exp)
+            });
+        }}
             />
         );
     }
 }
 
-const styles = StyleSheet.create({
-    button: {
-        margin:5,
-        backgroundColor: 'white',
-        padding: 15,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: '#cdcdcd',
-    }
-});
 AppRegistry.registerComponent('AwesomeProject', ()=> AwesomeProject);

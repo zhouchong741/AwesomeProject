@@ -18,14 +18,6 @@ var Carousel = require('react-native-carousel');
 
 class AwesomeProject extends Component {
     //头部轮播
-
-
-
-
-
-
-
-    //分类区
     render() {
 
         return(
