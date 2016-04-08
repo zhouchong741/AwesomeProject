@@ -41,5 +41,6 @@ const styles = StyleSheet.create({
     product_name: {
         margin:10,
         fontSize: 18,
+        color:'#999',
     }
 });

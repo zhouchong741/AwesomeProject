@@ -10,12 +10,18 @@ import React, {
     TextInput,
 } from 'react-native';
 import HomeHeader from '../header/CategoryHeader';
+
 export default class Category extends Component {
+
     render() {
         return (
-            <HomeHeader/>
-            
-            
+            <View>
+                <HomeHeader/>
+
+                    <Text>productName</Text>
+
+            </View>
+
         )
     }
 

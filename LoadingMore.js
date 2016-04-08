@@ -25,12 +25,12 @@ export default class LoadingMore extends Component {
     _onFetch(page = 1, callback, options) {
         setTimeout(() => {
             var rows = [
-                'row ' + ((page - 1) * 6 + 1),
-                'row ' + ((page - 1) * 6 + 2),
-                'row ' + ((page - 1) * 6 + 3),
-                'row ' + ((page - 1) * 6 + 4),
-                'row ' + ((page - 1) * 6 + 5),
-                'row ' + ((page - 1) * 6 + 6),
+                '底下还有呢！ ' + ((page - 1) * 6 + 1),
+                '底下还有呢！ ' + ((page - 1) * 6 + 2),
+                '底下还有呢！ ' + ((page - 1) * 6 + 3),
+                '底下还有呢！ ' + ((page - 1) * 6 + 4),
+                '底下还有呢！ ' + ((page - 1) * 6 + 5),
+                '底下还有呢！ ' + ((page - 1) * 6 + 6),
             ];
             if (page === 6) {
                 callback(rows, {

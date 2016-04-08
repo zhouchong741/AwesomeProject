@@ -18,14 +18,18 @@ import React, {
     ViewPager,
     TouchableWithoutFeedback,
     TouchableHighlight,
+    ScrollView,
 } from 'react-native';
+
 import MainScreen from './MainScreen';
 
-class AwesomeProject extends Component{
-    render(){
-        return (<MainScreen/>);
+var AwesomeProject = React.createClass({
+    render() {
+        return (
+            <MainScreen/>
+        );
     }
-}
+});
 
 
 
