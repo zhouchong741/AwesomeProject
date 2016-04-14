@@ -30,7 +30,4 @@ var AwesomeProject = React.createClass({
         );
     }
 });
-
-
-
 AppRegistry.registerComponent('AwesomeProject', ()=> AwesomeProject);
